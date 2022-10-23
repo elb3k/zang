@@ -24,7 +24,7 @@ syntax. Marhamat, that's it.
 ## More contributions
 
 First of all, _rahmat_ for considering participating to this joke, the
-French government will thank you later! Feel free to throw in a few identifiers
+Uzbek government will thank you later! Feel free to throw in a few identifiers
 here and there, and open a pull-request against the `asosiy` (Uzbek for
 `main`) branch.
 
