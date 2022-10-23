@@ -1,6 +1,6 @@
 # zang
 
-![](https://github.com/elb3k/zang/raw/principale/logo.jpg)
+![](https://github.com/elb3k/zang/raw/asosiy/logo.jpg)
 
 Aren't you _zerikdizmi_ from writing Rust programs in English? Would you like to try something different, in an exotic and
 funny-sounding language? Would you want to bring some Uzbek touch to your
