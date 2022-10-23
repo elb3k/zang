@@ -1,97 +1,41 @@
-# rouille
+# zang
 
-![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
+![](https://github.com/elb3k/zang/raw/principale/logo.jpg)
 
-Aren't you _le tired_ from writing Rust programs in English? Do you like saying
-"merde" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some French touch to your
+Aren't you _zerikdizmi_ from writing Rust programs in English? Would you like to try something different, in an exotic and
+funny-sounding language? Would you want to bring some Uzbek touch to your
 programs?
 
-**rouille** (French for _Rust_) is here to save your day, as it allows you to
-write Rust programs in French, using French keywords, French function names,
-French idioms.
-
-This has been designed to be used as the official programming language to
-develop the future French sovereign operating system. 
-
-If you're from the French or any other governement with French as an official 
-language: I will be awaiting your donations on
-[liberapay](https://liberapay.com/bnjbvr/).
-
-You're from Quebec (or elsewhere) and don't feel at ease using only French words? 
+**zang** (Uzbek for _Rust_) is here to save your day, as it allows you to
+write Rust programs in Uzbek, using Uzbek keywords, Uzbek function names,
+Uzbek idioms.
 
 Don't worry!
-French Rust is fully compatible with English-Rust, so you can mix both at your
+Uzbek Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
 Here's an example of what can be achieved with Rouille:
 
-### trait and impl (aka convention et réalisation)
-
-```rust
-rouille::rouille! {
-    utilisons std::collections::Dictionnaire comme Dico;
-
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> PeutÊtre<&Chaine>;
-    }
-
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
-
-    structure Concrète;
-
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
-            };
-            dico.insérer(clé, valeur);
-        }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
-            }
-        }
-    }
-}
-```
-
-### Support for regional languages
-
-```rust
-#[légal(code_inaccessible)]
-fonction secondaire() {
-    merde!("oh non"); // for the true French experience
-    calisse!("tabarnak"); // for friends speaking fr-ca
-    oups!("fetchez la vache"); // in SFW contexts
-}
-```
-
-### Other examples
+### Examples
 
 See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Voilà, that's it.
+syntax. Marhamat, that's it.
 
-## les contributions
+## More contributions
 
-First of all, _merci beaucoup_ for considering participating to this joke, the
+First of all, _rahmat_ for considering participating to this joke, the
 French government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `principale` (French for
+here and there, and open a pull-request against the `asosiy` (Uzbek for
 `main`) branch.
 
-Please don't introduce swear words, though: we will not excuse your French.
+Please don't introduce swear words, though: we will not excuse your Uzbek.
 
-## but why would you do zat
+## but why would you do that
 
 - horsin around
 - playing with raw proc macros
 - making a bit of fun about programming languages that do this seriously,
   though I can see their utility.
-- winking at [Marcel](https://github.com/brouberol/marcel)
-- c'est chic
 
 ## Other languages
 
@@ -127,12 +71,3 @@ Please don't introduce swear words, though: we will not excuse your French.
 - Swiss: [roeschti](https://github.com/Georg-code/roeschti)
 - Swedish: [rost](https://github.com/vojd/rost/)
 
-## un grand merci
-
-- [@VentGrey](https://twitter.com/VentGrey) for making a logo!
-
-## la license
-
-[License Publique Rien à Branler](http://sam.zoy.org/lprab/),
-_le_ official translation of the [WTFPL](http://www.wtfpl.net/)
-by the same author.

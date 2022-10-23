@@ -1,85 +1,43 @@
-rouille::rouille! {
-    externe cagette rouille;
-
-    utilisons std::collections::Dictionnaire comme Dico;
-
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine>;
+zang::zang!{
+    struktura Nuqta {
+        x: f64,
+        y: f64,
     }
-
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
-
-    structure Concrète;
-
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
-            };
-            dico.insérer(clé, valeur);
-        }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
-            }
+    
+    amal Nuqta {
+        funksiya yangi(x: f64, y: f64) -> Nuqta {
+            Nuqta { x: x, y: y }
         }
     }
-
-    public(cagette) fonction peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaine>> {
-        si i % 2 == 1 {
-            si i == 42 {
-                Quelque(Arf(Chaine::depuis("merde")))
-            } sinon {
-                Quelque(Bien(33))
-            }
-        } sinon {
-            Rien
+    
+    struktura Tortburchak {
+        p1: Nuqta,
+        p2: Nuqta,
+    }
+    
+    amal Tortburchak {
+        // To'rtburchak yuzasi
+        funksiya yuza(&men) -> f64 {
+            let Nuqta { x: x1, y: y1 } = men.p1;
+            let Nuqta { x: x2, y: y2 } = men.p2;
+            ((x1 - x2) * (y1 - y2)).abs()
+        }
+        // To'rtburchak perimetri
+        funksiya perimeter(&men) -> f64 {
+            let Nuqta { x: x1, y: y1 } = men.p1;
+            let Nuqta { x: x2, y: y2 } = men.p2;
+    
+            2.0 * ((x1 - x2).abs() + (y1 - y2).abs())
         }
     }
 
-    asynchrone fonction exemple() {
-    }
-
-    asynchrone fonction exemple2() {
-        exemple().attend;
-    }
-
-    fonction principale() {
-        soit mutable x = 31;
-
-        selon x {
-            42 => {
-                affiche!("omelette du fromage")
-            }
-            _ => affiche!("voila")
-        }
-
-        pour i de 0..10 {
-            soit val = boucle {
-                arrête i;
-            };
-
-            tant que x < val {
-                x += 1;
-            }
-
-            x = si soit Quelque(resultat) = peut_etre(i) {
-                resultat.déballer()
-            } sinon {
-                12
-            };
-        }
-
-        //secondaire();
-    }
-
-    #[légal(code_inaccessible)]
-    fonction secondaire() {
-        merde!("oh non"); // for the true French experience
-        calisse!("tabernacle"); // for friends speaking fr-ca
-        oups!("fetchez la vache"); // in SFW contexts
+    funksiya asosiy() {
+        let tortburchak = Tortburchak {
+            p1: Nuqta::yangi(0.0, 0.0),
+            p2: Nuqta::yangi(3.0, 4.0),
+        };
+    
+        liniyachopetish!("To'rtburchak perimeteri: {}", tortburchak.perimeter());
+        liniyachopetish!("To'rtburchak yuzasi: {}", tortburchak.yuza());
     }
 }
