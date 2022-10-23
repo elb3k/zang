@@ -14,8 +14,6 @@ Don't worry!
 Uzbek Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
-Here's an example of what can be achieved with Rouille:
-
 ### Examples
 
 See the [examples](./examples/src/main.rs) to get a rough sense of the whole
